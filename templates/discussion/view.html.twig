@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Discussion
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('repo/css/discussion.css') }}">
+    <link rel="stylesheet" href="{{ asset('repo/css/discussionSideBar.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <twig:sideBar :discussions="discussions" :user="user"></twig:sideBar>
+
+    <div class="chat">
+        <div class="column">
+            <div class="row chat__info">
+                <div class="column">
+                    <h2 class="f-b">{{ current['name'] }}</h2>
+                </div>
+                <a href="">edit</a>
+            </div>
+            <div class="dialogue" id="chat-dialogue">
+                {% if messages|length > 0 %}
+
+                    {% for message in messages %}
+
+                        <div class="message row">
+                            <div class="row">
+                                <div class="info w-100per">
+                                    <div class="usertime row">
+                                        <div>
+                                            <span class="username f-sb">{{ message['sentBy'] }}</span>
+                                            <span class="time f-m">now</span>
+                                        </div>
+                                        <span>Copy</span>
+                                    </div>
+                                    <p class="text f-m">
+                                        {{ message['text'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+                    <h2>Silence in the Cosmos</h2>
+                    <h3>This space is waiting for your first message. Let's start a conversation about the wonders of the universe!</h3>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row response">
+            <textarea class="gradient-border" id="chat-prompt" name="prompt"
+                      placeholder="Enter your prompt here"></textarea>
+            <button type="submit" id="send">Send</button>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('repo/css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="login">
+        <div class="left-side">
+            <div class="row form-heading">
+                <twig:logo_large background="black"></twig:logo_large>
+            </div>
+            <div class="group grp-form">
+                <div class="column">
+                    <h2 class="f-m">Let's get to the stars</h2>
+                    <h3 class="f-m">Log in to SkySpark and talk with the cosmos.</h3>
+                </div>
+                <form class="form form-login" method="post" action="{{ path('account.login') }}">
+                    <div class="group grp-input">
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}">
+
+                        <div class="input-w-icon">
+                            <img src="{{ asset('repo/icons/email.svg') }}">
+                            <input type="Email" class="" name="email" placeholder="Email">
+                        </div>
+
+                        <twig:input.w-icon icon="{{ asset('repo/icons/locked_lock.svg') }}" value="Password"
+                                           type="password" name="password"></twig:input.w-icon>
+
+                        <div class="row">
+                            <div class="group">
+                                <input type="checkbox">
+                                <label>Remember Me</label>
+                            </div>
+                            <a href="">Forget Password ?</a>
+                        </div>
+                        <button type="submit" class="f-sb">Log In</button>
+
+                    </div>
+                </form>
+                <twig:labeled_hr>or continue with</twig:labeled_hr>
+                <a href="" class="button f-sb">
+                    <img src="{{ asset('repo/icons/google.svg') }}" alt="Google's logo simple">
+                    <span>Google Account</span>
+                </a>
+            </div>
+            <footer class="row form-footer">
+                <span>Don’t have an account? <a href="{{ path('account.register') }}">Register</a> </span>
+            </footer>
+        </div>
+        <div class="right-side" style="background-image: url('{{ asset('repo/images/login.jpg') }}')"></div>
+    </div>
+
+{% endblock %}

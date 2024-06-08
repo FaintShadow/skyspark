@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Discussion
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{{ asset('repo/css/discussion.css') }}">
+    <link rel="stylesheet" href="{{ asset('repo/css/discussionSideBar.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <twig:sideBar :discussions="discussions" :user="user"></twig:sideBar>
+
+    <div class="template__add">
+        <form action="{{ path('template.add') }}">
+            <div class="column">
+                <twig:labeled_Input label="Name" name="name"></twig:labeled_Input>
+                <twig:labeled_Input label="Description" name="description"></twig:labeled_Input>
+            </div>
+            <button type="submit">Add Instruction Template</button>
+        </form>
+    </div>
+
+{% endblock %}

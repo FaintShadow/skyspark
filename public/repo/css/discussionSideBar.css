@@ -1,0 +1,101 @@
+.sidebar {
+    margin: calc(var(--border_r) * 1.2);
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    width: max(191px, 20%);
+    max-width: 256px;
+
+    background: var(--nobel_black__800);
+    border-radius: var(--border_r);
+    justify-content: space-between;
+    place-content: space-between;
+}
+
+.sidebar .history > *:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.sidebar .navigation__item {
+    color: white;
+    padding: 4px;
+    border-radius: var(--border_r);
+    border: 2px solid transparent;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    transition: background-color .25s ease-out;
+}
+
+.sidebar .navigation__item:hover {
+    background-color: var(--nobel_black__600);
+    transition: background-color .25s ease-out;
+}
+
+.sidebar .navigation__item.create {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0 .4rem 0 0;
+    border: 0;
+    color: var(--nobel_black__400);
+}
+
+.sidebar .navigation__item.create .stroke{
+    stroke: var(--nobel_black__300);
+}
+
+.sidebar .navigation__item.create button {
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+    color: inherit;
+}
+
+.sidebar .account{
+    padding: .8rem;
+    align-items: center;
+
+    background-image: linear-gradient(155deg, #D7EDED80, #CCEBEB00 55%);
+    border-radius: var(--border_r);
+}
+
+.sidebar .account > a{
+    min-width: 1.8rem;
+}
+
+.sidebar .account .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .navigation__tabs{
+    color: var(--nobel_black__300);
+    display: flex;
+    gap: 1.2rem;
+}
+
+.sidebar .navigation__tabs .tab{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .navigation__tabs .tab .text{
+    margin: .8rem 0;
+}
+
+.sidebar .navigation__tabs .tab .tab__selector{
+    width: 100%;
+    height: .4rem;
+    border-radius: var(--border_r) var(--border_r) 0 0;
+    background-image: linear-gradient(to right, #B6F09C, #82DBF7);
+}
+

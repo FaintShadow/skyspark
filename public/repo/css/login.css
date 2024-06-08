@@ -1,0 +1,91 @@
+h2 {
+    width: 90%;
+}
+
+h3 {
+    color: var(--nobel_black__300);
+    font-size: 1.8rem;
+}
+
+.form-heading {
+    padding: 48px 48px 0 48px;
+    color: var(--nobel_black__300);
+}
+
+.form-footer {
+    padding: 0 48px 48px 48px;
+    color: var(--nobel_black__300);
+    font-size: 1.6rem;
+}
+
+
+.right-side {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 24px 0 0 24px;
+    background-position: top;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.grp-form {
+    margin: auto;
+    width: max(60%, 480px);
+}
+
+button, a.button {
+    background-color: var(--accent);
+    margin: auto;
+    width: 100%;
+    color: #0C1132;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+.grp-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.grp-form > *:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.group {
+    color: white;
+}
+
+.labeled-hr {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--nobel_black__300);
+    line-height: 0.1em;
+}
+
+.labeled-hr span {
+    background: var(--pri_bg);
+    padding: 0 12px;
+    color: var(--nobel_black__400);
+    font-size: 1.2rem;
+}
+a.button{
+    background-color: var(--nobel_black__600) !important;
+    color: var(--nobel_black__300) !important;
+    font-size: 1.6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+a.button img{
+    margin-right: 12px;
+}

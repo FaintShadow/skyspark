@@ -1,0 +1,37 @@
+<div class="sidebar">
+    <div class="navigation__tabs">
+        <div class="tab">
+            <span class="text">Chat</span>
+            <span class="tab__selector"></span>
+        </div>
+        <div class="tab">
+            <span class="text">Manage</span>
+            <span class="tab__selector"></span>
+        </div>
+    </div>
+    <div class="history navigation column">
+        {% for discussion in discussions %}
+            <a href="{{ path('discussion.view', {'discussion': discussion['id']})  }}" class="navigation__item gradient-border">
+                {{ discussion['name'] }}
+            </a>
+        {% endfor %}
+
+        <form action="{{ path('discussion.create') }}" class="navigation__item create">
+            <input type="hidden" name="_token" value="{{ csrf_token('create') }}">
+
+            <button type="submit">
+                {{ render_inline_svg(asset('repo/icons/add.svg'))|raw }}
+                <span class="f-b">Create</span>
+            </button>
+        </form>
+    </div>
+    <div class="account row">
+        <div class="info">
+            <span class="f-b" style="color: white">{{ user.firstname }} {{ user.lastname }}</span>
+            <span style="color: var(--nobel_black__300)" >{{ user.email }}</span>
+        </div>
+        <a href="{{ path('account.settings') }}">
+            {{ render_inline_svg(asset('repo/icons/settings.svg'))|raw }}
+        </a>
+    </div>
+</div>

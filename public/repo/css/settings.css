@@ -1,0 +1,68 @@
+.settings {
+    width: -webkit-fill-available;
+    margin: calc(var(--border_r) * 1.2);
+}
+
+.settings .header {
+    align-items: center;
+    color: white;
+    padding: calc(var(--border_r) * 1.2);
+    background: var(--nobel_black__800);
+    border-radius: var(--border_r);
+}
+
+.settings .settings__section .section {
+    display: flex;
+    margin: 1.8rem 0;
+    border: 2px solid var(--nobel_black__800);
+    border-radius: var(--border_r);
+}
+
+.settings .settings__section .section .section__content{
+    width: -webkit-fill-available;
+    border-radius: var(--border_r) 0 0 var(--border_r);
+    padding: 1.2rem;
+}
+
+.settings .settings__section .section .section__label{
+    min-width: 227px;
+    padding: .8rem;
+    text-align: center;
+    border-radius: 0 var(--border_r) var(--border_r) 0;
+    background: var(--nobel_black__800);
+    color: white;
+}
+
+.settings form .row .labeled-input:first-child {
+    margin-right: 12px;
+}
+
+.settings form .critical{
+    color: white;
+    display: flex;
+    background-color: var(--nobel_black__800);
+    border-radius: var(--border_r);
+    margin: .8rem 0;
+    padding: .8rem;
+    align-items: center;
+    gap: .8rem;
+}
+
+.settings form button[type='submit']{
+    padding: 1.2rem 1.8rem;
+    background-color: var(--accent);
+    color: var(--day_blue__900);
+}
+
+.settings form .critical svg .stroke{
+    stroke: #D0302F;
+}
+
+.settings form .critical .focus{
+    color: #D0302F;
+}
+
+.settings form.delete button[type='submit']{
+    color: white;
+    background-color: #D0302F;
+}

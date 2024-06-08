@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('repo/css/create.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="create">
+        <div class="left-side">
+            <div class="row form-heading">
+                <twig:logo_large background="black"></twig:logo_large>
+                <a href="{{ path('account.login') }}">Log In</a>
+            </div>
+            <div class="group grp-form">
+                <h2 class="f-r">Create your account and have breathtaking conversation with space</h2>
+                {{ form_errors(form) }}
+
+                {{ form_start(form, { 'attr' : { 'class': 'form-register' } }) }}
+
+                    <div class="group grp-input">
+                        <div class="row">
+                            <div class="labeled-input">
+                                <label>{{ form_label(form.firstName) }}</label>
+                                {{ form_widget(form.firstName, {
+                                    'type': 'text',
+                                    'name': 'form[firstName]',
+                                    'placeholder': '{{ form_label(form.firstName) }}'
+                                })
+                                }}
+                                {{ form_errors(form.firstName) }}
+                            </div>
+                            <div class="labeled-input">
+                                <label>{{ form_label(form.lastName) }}</label>
+                                {{ form_widget(form.lastName, {
+                                    'type': 'text',
+                                    'name': 'form[lastName]',
+                                    'placeholder': '{{ form_label(form.lastName) }}'
+                                })
+                                }}
+                                {{ form_errors(form.lastName) }}
+                            </div>
+                        </div>
+
+                        <div class="labeled-input">
+                            <label>{{ form_label(form.email) }}</label>
+                            {{ form_widget(form.email, {
+                                'type': 'email',
+                                'name': 'form[email]',
+                                'placeholder': '{{ form_label(form.email) }}'
+                            })
+                            }}
+                            {{ form_errors(form.email) }}
+                        </div>
+
+                        <div class="row">
+                            <div class="labeled-input">
+                                <label>{{ form_label(form.password) }}</label>
+                                {{ form_widget(form.password, {
+                                    'type': 'password',
+                                    'name': 'form[password]',
+                                    'placeholder': '{{ form_label(form.password) }}'
+                                })
+                                }}
+                                {{ form_errors(form.password) }}
+                            </div>
+
+                        </div>
+                        <div class="group" style="padding: 20px 0;">
+                            {{
+                                form_widget(form.agreeTerms, {
+                                    'type': 'checkbox',
+                                    'name': 'form[agreeTerms]',
+                                })
+                            }}
+                            <label>I agree with <a href="">Terms and Conditions</a></label>
+                        </div>
+                        <button type="submit" class="f-sb" >Create free account</button>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+            <footer class="row form-footer">
+                <span>SkySpark © {{ "now"|date("Y") }} </span>
+                <a>Privacy Policy</a>
+            </footer>
+        </div>
+        <div class="right-side" style="background-image: url('{{ asset('repo/images/register.png') }}')"></div>
+    </div>
+
+{% endblock %}

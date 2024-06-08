@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Discussion
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="{{ asset('repo/css/discussion.css') }}">
+    <link rel="stylesheet" href="{{ asset('repo/css/discussionSideBar.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <twig:sideBar :discussions="discussions" :user="user"></twig:sideBar>
+
+    <div class="templateAdd">
+        <form action="{{ path }}"></form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,119 @@
+h2 {
+    font-size: 1.8rem !important;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--nobel_black__300);
+}
+
+.chat {
+    width: -webkit-fill-available;
+    margin: calc(var(--border_r) * 1.2);
+}
+
+.chat-empty {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--nobel_black__300);
+    font-size: 2.4rem;
+}
+
+.chat .chat__info {
+    align-items: center;
+    color: white;
+    padding: calc(var(--border_r) * 1.2);
+    background: var(--nobel_black__800);
+    border-radius: var(--border_r);
+}
+
+.chat {
+    position: relative;
+}
+
+.chat > .column {
+    height: calc(100% - 10rem);
+    overflow: hidden;
+}
+
+.chat > .column .dialogue {
+    overflow-y: auto;
+    height: -webkit-fill-available;
+    padding: 12px 0;
+}
+
+.chat .dialogue-empty {
+    margin-top: 25vh;
+}
+
+.response {
+    position: absolute;
+    bottom: 0;
+}
+
+.response textarea {
+    resize: none;
+    padding: 12px;
+    width: 100%;
+    height: 10rem;
+    font-size: 1.6rem;
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow .25s ease-out;
+}
+
+.response textarea:focus, .response textarea:focus-within {
+    box-shadow: 0 0 0 6px #B6F09C1F;
+    transition: box-shadow .5s ease-out;
+}
+
+.message {
+    color: white;
+    padding: 12px 8px;
+    margin: 12px 0;
+    border: 2px solid var(--nobel_black__600);
+    border-radius: var(--border_r);
+    --avatar_height: 32px;
+}
+
+.avatar {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 8px;
+}
+
+.avatar .user__avatar, .avatar .orbot__avatar {
+    width: var(--avatar_height) !important;
+    border-radius: 25%;
+}
+
+.usertime {
+    align-items: center;
+    height: var(--avatar_height);
+}
+
+.usertime > div {
+    display: flex;
+    align-items: center;
+}
+
+.usertime .username {
+    font-size: 1.8rem;
+    margin-right: 12px;
+}
+
+.usertime .time {
+    font-size: 1.2rem;
+    color: var(--nobel_black__400);
+}
+
+.message .text {
+    color: var(--nobel_black__300);
+    font-size: 1.6rem;
+}
+
+
+
+
+
